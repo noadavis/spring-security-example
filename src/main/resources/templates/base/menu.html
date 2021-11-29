@@ -1,0 +1,13 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org" th:remove="tag">
+    <div th:fragment="menu_static" th:remove="tag">
+        <ul th:if="${appData.isUserAuth()}">
+            <li class="menu-item"><a href="/" class="menu-link"><i class="fa fa-home"></i> <span>Home</span></a></li>
+            <li class="menu-item"><a href="/pages/info" class="menu-link"><i class="fa fa-id-card-o"></i> <span>User info</span></a></li>
+            <li class="menu-item"><a href="/pages/user" class="menu-link"><i class="fa fa-user"></i> <span>User page</span></a></li>
+            <li class="menu-item"><a href="/pages/editor" class="menu-link"><i class="fa fa-user"></i> <span>Editor page</span></a></li>
+        </ul>
+        <ul th:unless="${appData.isUserAuth()}">
+            <li class="menu-item"><a href="/" class="menu-link"><i class="fa fa-home"></i> <span>Home</span></a></li>
+        </ul>
+    </div>
+</html>

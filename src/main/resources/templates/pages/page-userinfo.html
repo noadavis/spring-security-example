@@ -1,0 +1,44 @@
+<html layout:decorate="~{base/main}" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+    <head></head>
+    <body>
+        <section class="row" layout:fragment="mainContent">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>User Info</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-borderless mb-0">
+                                <tr>
+                                    <td width="40%">Id</td><td th:text="${appData.getUserId()}">
+                                        <span style="display: none;" id="csrf" th:text="${_csrf.token}"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Username</td><td th:text="${appData.getUserUsername()}"></td>
+                                </tr>
+                                <tr>
+                                    <td>Fullname</td>
+                                    <td><span id="userFullname" th:text="${appData.getUserFullname()}"></span></td>
+                                </tr>
+                                <tr>
+                                    <td>Email</td>
+                                    <td><span id="userEmail" th:text="${appData.getUserEmail()}"></span></td>
+                                </tr>
+                                <tr>
+                                    <td>Permissions</td>
+                                    <td><strong>
+                                        <span class="menu-item" th:each="role: ${appData.getUserRoles()}" th:text="${role.name()} + ' '"></span>
+                                    </strong></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

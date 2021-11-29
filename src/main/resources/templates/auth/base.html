@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="https://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title th:text="${@environment.getProperty('spring.application.name')}"></title>
+        <link rel="stylesheet" href="/static/css/bootstrap.css">
+        <link rel="stylesheet" href="/static/css/app.css">
+        <link rel="stylesheet" href="/static/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/static/css/other.css">
+        <link rel="stylesheet" href="/static/css/auth.css">
+        <link rel="shortcut icon" href="/static/favicon.ico" />
+    </head>
+    <body>
+        <div id="auth">
+            <div class="row h-100">
+                <div class="col-lg-6 col-12">
+                    <div id="auth-left" layout:fragment="content">
+                    </div>
+                </div>
+                <div class="col-lg-6 d-none d-lg-block">
+                    <div id="auth-right">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
